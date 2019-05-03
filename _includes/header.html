@@ -1,0 +1,24 @@
+{% if page.background %}
+<header class="masthead" style="background-image: url('{{ page.background | replace: '//', '/' }}')">
+{% else %}
+<header class="masthead">
+{% endif %}
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto align-self-center">
+        <div class="page-heading">
+          {% if page.title == "The Churchill Chronicle" %}
+          <img src="/images/The-Churchill-Chronicle-logo-header-white.png">
+          {% else %}
+          <h1>{{ page.title }}</h1>
+          {% endif %}
+          
+          {% if page.description %}
+          <span class="subheading">{{ page.description }}</span>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
