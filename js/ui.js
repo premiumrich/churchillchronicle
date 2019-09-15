@@ -20,7 +20,8 @@
   // Primary navigation slide-in effect
   if ($(window).width() > MQL) {
     var headerHeight = $('#mainNav').height();
-    $(window).on('scroll', {
+    if (window.location.pathname == "/") {
+      $(window).on('scroll', {
         previousTop: 0
       },
       function() {
@@ -40,6 +41,9 @@
         }
         this.previousTop = currentTop;
       });
+    } else {
+      $('#mainNav').addClass('is-visible is-fixed');
+    }
   }
 })(jQuery); // End of use strict
 
