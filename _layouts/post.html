@@ -4,20 +4,25 @@ layout: default
 <!-- Page Header -->
 {% if page.background %}
 <header class="masthead" style="background-image: url('{{ page.background | replace: '//', '/' }}')">
-{% else %}
-<header class="masthead">
-{% endif %}
   <div class="overlay"></div>
+{% else %}
+<header class="masthead" style="background-color: white; height: auto;">
+{% endif %}
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
+        {% if page.background %}
         <div class="post-heading">
+        {% else %}
+        <div class="post-heading" style="color: #212529; padding-top: 150px; padding-bottom: 40px;">
+        {% endif %}
           <h1>{{ page.title }}</h1>
           {% if page.subtitle %}
           <h2 class="subheading">{{ page.subtitle }}</h2>
           {% endif %}
           <span class="meta">
-            Posted by <a href="#">{{ page.author }}</a> on {{ page.date | date: '%B %d, %Y' }} &middot;
+            Posted by <a href="#" style="color: black;">
+              {{ page.author }}</a> on {{ page.date | date: '%B %d, %Y' }} &middot;
             {% include read_time.html content=page.content %}
           </span>
         </div>
